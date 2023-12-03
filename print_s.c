@@ -8,7 +8,7 @@
  * Return: nothing
  */
 
-int print_str(va_list args)
+int print_s(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int count = 0;

@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		if (*format == '%' && *(format + 1) != '%')
 		{
 			format++;
-			function = function(format);
+			function = get_function(format);
 			if (*(format) == '\0')
 				return (-1);
 			else if (function == NULL)
