@@ -4,20 +4,26 @@
 /**
  * print_str - prints string
  * @args: argument
- * @count: length of string
  *
  * Return: nothing
  */
 
-void print_str(int *count, va_list args)
+int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
+	int count = 0;
+	int retVal;
+
+	if (!str)
+		str = "(null)";
 
 	while (*str)
 	{
-		write(1, str, 1);
-		if (*str != '\n')
-			(*count)++;
+		retVal = _putchar(*str);
+		if (retVal == -1)
+			return (-1);
+		count++;
 		str++;
 	}
+	return (count);
 }

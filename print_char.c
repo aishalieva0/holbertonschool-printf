@@ -8,9 +8,15 @@
  * Return: nothing
  */
 
-void print_char(va_list args)
+int print_char(va_list args)
 {
 	char c = va_arg(args, int);
+	int count = 0, retval;
 
-	write(1, &c, 1);
+	retval = _putchar(c);
+	if (retval == -1)
+		return (-1);
+	count++;
+
+	return (count);
 }
